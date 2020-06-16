@@ -1,0 +1,39 @@
+# Linear Search
+
+main_list = []
+search_value = None
+value_present = False
+position = None
+
+def linear_search():
+
+	global main_list
+	global search_value
+
+	list_size = int(input("Enter the size of list : "))
+
+	print("Enter the numbers in list")
+
+	for num in range(0,list_size):
+		list_value = int(input())
+		main_list.append(list_value)
+
+	search_value = int(input("Enter the value to be searched : "))
+
+	search(main_list, search_value)
+
+def search(main_list, search_value):
+
+	global value_present
+
+	for i in range(0, len(main_list)):
+		if int(main_list[i]) == search_value:
+			value_present = True
+			position = i
+
+	if value_present == True:
+		print("Value is at position : " + str(position+1))
+	else:
+		print("Value is not present in the list")
+
+linear_search()

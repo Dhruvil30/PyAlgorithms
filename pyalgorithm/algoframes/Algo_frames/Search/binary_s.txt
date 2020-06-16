@@ -1,0 +1,51 @@
+#Binary Search
+
+number_list = []
+
+low = 0
+mid = 0
+high = 0
+
+def binary_search():
+
+	global low,mid,high
+
+	list_size = int(input("Enter the size of list : "))
+
+	print("Enter the numbers in shorted order")
+	for num in range(0,list_size):
+		list_value = int(input())
+		number_list.append(list_value)
+
+	value = int(input("Enter the number to be search : ")) 
+
+	low = 0
+	high = list_size
+
+	answer = compare(number_list,value,low,high)
+
+	if answer == -1:
+		print("Element not fount in the list")
+	else:
+		print("Element is at position : " , answer+1)
+
+def compare(number_list,value,low,high):
+
+	mid = int((low + high) / 2)
+
+	if high > low:
+		if(value == number_list[mid]):
+			return mid
+		else:
+			if value < number_list[mid]:
+				return compare(number_list,value,low,mid-1)
+			else: 
+				return compare(number_list,value,mid+1,high)
+	elif high == low:
+		if(value == number_list[low]):
+			print(high,low)
+			return mid
+		else:
+			return -1
+
+binary_search()	

@@ -1,0 +1,11 @@
+body{
+	background-color: #C6CCC6;
+}
+span{
+	font-weight: bolder;
+}
+iframe{
+	height: 350px;
+	width: 80%;
+	background-color: #9CA29C;
+}
